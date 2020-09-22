@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext.prop1 = '拡張プロパティ１'
+
+println "設定フェーズ：前：${ext.prop1}：${extProp}"
+
+configurations  {
+    println "設定フェーズ：configrations：${extProp}"
+}
+
+dependencies {
+    println "設定フェーズ：dependensies：${extProp}"
+}
+
+ext.prop2 = "拡張プロパティ２"
+
+println "設定フェーズ：中：${ext.prop1}：${ext.prop2}：${extProp}"
+
+clean {
+
+    println "設定フェーズ：タスク内：${extProp}"
+
+    doFirst {
+        println "タスク実行フェーズ：doFirst：${extProp}"
+    }
+
+    doLast {
+        println "タスク実行フェーズ：doLast：${extProp}"
+    }
+
+}
+
+println "設定フェーズ：後：${ext.prop1}：${ext.prop2}：${extProp}"

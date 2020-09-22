@@ -1,0 +1,3 @@
+rootProject.name = 'sample-gradle-phase'
+
+println "初期化フェーズ：${extProp}"
